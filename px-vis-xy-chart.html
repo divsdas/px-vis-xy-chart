@@ -693,6 +693,10 @@ Custom property | Description
       _internalMarginMarkers: {
         type: Object
       },
+      smartsignalPointsModecheck: {
+        type: Boolean,
+        value: false
+      },
 
       /**
        * A boolean to specify if the axis ticks should align (which affects
@@ -908,7 +912,6 @@ Custom property | Description
       if(this.smartSignalPointsModeCheck) {
         wrapperRect.height = this.height;
       }
-
       if(this.$.register.type === 'horizontal') {
         heightDeduct += registerRect.height;
       } else {
