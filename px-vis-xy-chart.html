@@ -693,7 +693,7 @@ Custom property | Description
       _internalMarginMarkers: {
         type: Object
       },
-      smartsignalPointsModecheck: {
+      pointsMode: {
         type: Boolean,
         value: false
       },
@@ -909,10 +909,10 @@ Custom property | Description
           heightDeduct = 0,
           widthDeduct = 0;
       
-      if(this.smartSignalPointsModeCheck) {
+      if (this.pointsMode) {
         wrapperRect.height = this.height;
       }
-      if(this.$.register.type === 'horizontal') {
+      if (this.$.register.type === 'horizontal') {
         heightDeduct += registerRect.height;
       } else {
         widthDeduct += registerRect.width;
