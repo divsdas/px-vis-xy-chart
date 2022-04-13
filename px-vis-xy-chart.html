@@ -766,6 +766,12 @@ Custom property | Description
         value: function() {
           return false;
         }
+      },
+      smartSignalPointsModeCheck: {
+        type: Boolean,
+        value: function() {
+          return false;
+        }
       }
     },
     observers: [
@@ -898,9 +904,10 @@ Custom property | Description
           toolbarRect = this.$.toolbar.getBoundingClientRect(),
           heightDeduct = 0,
           widthDeduct = 0;
-          if(this.smartSignalPointsModeCheck) {
-            wrapperRect.height = this.height;
-          }
+      
+      if(this.smartSignalPointsModeCheck) {
+        wrapperRect.height = this.height;
+      }
 
       if(this.$.register.type === 'horizontal') {
         heightDeduct += registerRect.height;
