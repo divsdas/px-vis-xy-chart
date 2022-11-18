@@ -153,6 +153,7 @@ Custom property | Description
             within-chart
             chart-margin="[[_internalMargin]]"
             show-tooltip="{{_internalShowTooltip}}"
+            is-xy-chart="[[isXyChart]]"
             config='{"zoom": true, "pan": true, "tooltip": true}'>
           </px-vis-toolbar>
           <!-- Core -->
@@ -176,6 +177,7 @@ Custom property | Description
             register-format-callback="[[registerFormatCallback]]"
             complete-series-config="[[completeSeriesConfig]]"
             mouse-position="[[mousePosition]]"
+            is-ebq-chart="[[ isEbqChart ]]"
             hover-target="[[mouseRect]]"
             tooltip-style="light"
             hard-mute="[[hardMute]]"
@@ -301,7 +303,7 @@ Custom property | Description
           height="[[height]]"
           margin="[[_internalMargin]]"
           chart-data="[[_filteredData]]"
-          tooltip-data="[[_registerTooltipData]]"
+          tooltip-data="[[_cursorData]]"
           complete-series-config="[[completeSeriesConfig]]"
           clip-path="[[seriesClipPath]]"
           muted-series="[[mutedSeries]]"
@@ -388,7 +390,9 @@ Custom property | Description
         chart-data="[[_filteredData]]"
         chart-id="[[chartId]]"
         tooltip-data="{{tooltipData}}"
+        is-xy-chart="[[isXyChart]]"
         is-ebq-chart="[[ isEbqChart ]]"
+        show-tooltip-points-mode="[[ showTooltipPointsMode ]]"
         crosshair-data="{{crosshairData}}"
         default-empty-data="[[defaultEmptyData]]"
         generating-crosshair-data="{{generatingCrosshairData}}"
