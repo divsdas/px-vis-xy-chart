@@ -143,7 +143,8 @@ Custom property | Description
           y-axis-type="[[yAxisType]]"
           current-page="[[_registerCurrentPage]]"
           total-pages="[[_registerTotalPages]]"
-          display-page-arrows="[[_registerDisplayPageArrows]]">
+          display-page-arrows="[[_registerDisplayPageArrows]]"
+          decimal-format="[[decimalFormat]]">
         </px-vis-register>
         <div id="drawingWrapper" class="flex--col inline--flex">
           <px-vis-toolbar
@@ -181,7 +182,8 @@ Custom property | Description
             hover-target="[[mouseRect]]"
             tooltip-style="light"
             hard-mute="[[hardMute]]"
-            series-keys="[[_seriesKeys]]">
+            series-keys="[[_seriesKeys]]"
+            decimal-format="[[decimalFormat]]">
           </px-vis-tooltip>
           <px-vis-svg-canvas
             class="inline--flex"
@@ -411,7 +413,8 @@ Custom property | Description
         extents-action="{{extentsAction}}"
         hard-mute="[[hardMute]]"
         muted-series="[[mutedSeries]]"
-        log-base="[[logBase]]">
+        log-base="[[logBase]]"
+        decimal-format="[[decimalFormat]]">
       </px-vis-interaction-space>
 
       <px-vis-markers
