@@ -132,6 +132,7 @@ Custom property | Description
           id="register"
           class$="{{_getHideClass(hideRegister)}}"
           height="[[_registerHeight]]"
+          width="[[registerWidth]]"
           dynamic-menu-config="[[dynamicMenuConfig]]"
           tooltip-data="[[_registerTooltipData]]"
           chart-data="[[_filteredData]]"
@@ -175,11 +176,10 @@ Custom property | Description
             muted-series="[[mutedSeries]]"
             x-axis-type="[[xAxisType]]"
             y-axis-type="[[yAxisType]]"
+            is-ebq-ss-chart="[[isEbqSsChart]]"
             register-format-callback="[[registerFormatCallback]]"
             complete-series-config="[[completeSeriesConfig]]"
             mouse-position="[[mousePosition]]"
-            is-ebq-chart="[[ isEbqChart ]]"
-            is-ebq-ss-chart="[[isEbqSsChart]]"
             hover-target="[[mouseRect]]"
             tooltip-style="light"
             hard-mute="[[hardMute]]"
@@ -724,6 +724,12 @@ Custom property | Description
         computed: '_computeAxisActionConfig(dimensions.*, _isAttached)'
       },
 
+      registerWidth: {
+        type: Number,
+        value: 250,
+        computed: '_registerWidth(tooltipData.*)'
+      },
+
       /**
        * List of key/values to be included for translating this component
        */
@@ -1123,6 +1129,13 @@ Custom property | Description
 
     _showRef: function() {
       return this.referenceData && this.referenceData.length ? true : false;
+    },
+
+    _registerWidth: function () {
+      if(this.hasUndefinedArguments(arguments)) {
+        return;
+      }
+        return this.tooltipData && this.tooltipData.width;
     }
   });
 </script>
